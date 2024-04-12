@@ -1,0 +1,103 @@
+from flask import Flask
+from flask import render_template
+from flask import Response, request, jsonify
+app = Flask(__name__)
+
+coffees = [
+    {
+        "id": 1,
+        "name": "Latte",
+        "image": "static/images/latte.png",
+        "learned": True,
+        "info": "Espresso blended with silky steamed milk for a creamy texture and balanced flavor profile.",
+        "recipe": [("espresso", 2), 
+                   ("steamed milk", 3), 
+                   ("milk foam", 1)]
+    },
+    {
+        "id": 2,
+        "name": "Flat White",
+        "image": "static/images/flat_white.png",
+        "learned": False,
+        "info": "A bold espresso shot with a smooth layer of microfoam, creating a velvety texture and strong coffee taste.",
+        "recipe": [("espresso", 1), 
+                   ("steamed milk", 2)],
+    },
+    {
+        "id": 3, 
+        "name": "Americano",
+        "image": "static/images/americano.png",
+        "learned": True,
+        "info": "Hot water added to espresso for a lighter coffee experience, maintaining the espresso's robust flavor.",
+        "recipe": [("espresso", 1), 
+                   ("water", 1)]
+    },
+    {
+        "id": 4, 
+        "name": "Mocha",
+        "image": "static/images/mocha.png",
+        "learned": False,
+        "info": "Rich espresso infused with decadent chocolate syrup and creamy steamed milk, offering a delightful blend of bitter and sweet notes.",
+        "recipe": [("espresso", 1),
+                   ("hot chocolate", 1),
+                   ("steamed milk", 2), 
+                   ("whipped cream", 1)]
+    },
+    {
+        "id": 5, 
+        "name": "Cappuccino",
+        "image": "static/images/cappuccino.png",
+        "learned": True,
+        "info": "A harmonious combination of espresso, steamed milk, and frothed milk, resulting in a creamy texture and bold coffee flavor.",
+        "recipe": [("espresso", 1), 
+                   ("steamed milk", 1), 
+                   ("milk foam", 1)]
+    },
+    {
+        "id": 6, 
+        "name": "Espresso",
+        "image": "static/images/espresso.png",
+        "learned": False,
+        "info": "A concentrated coffee shot brewed by forcing hot water through finely-ground coffee beans, producing an aromatic beverage with a layer of crema on top.",
+        "recipe": [("espresso", 3)]
+    },
+    {
+        "id": 7, 
+        "name": "Irish Coffee",
+        "image": "static/images/irish_coffee.png",
+        "learned": True,
+        "info": "Whiskey-spiked coffee topped with cream; a cozy, spirited treat with a caffeine kick.",
+        "recipe": [("espresso", 2), 
+                   ("whiskey", 1), 
+                   ("whipped cream", 1)]
+    },
+    {
+        "id": 8, 
+        "name": "Macchiato",
+        "image": "static/images/macchiato.png",
+        "learned": False,
+        "info": "Espresso \"stained\" with a dollop of frothy milk; a bold, balanced coffee indulgence.",
+        "recipe": [("espresso", 1), 
+                   ("milk foam", 2)]
+    },
+    {
+        "id": 9, 
+        "name": "Affogato",
+        "image": "static/images/affogato.png",
+        "learned": False,
+        "info": "Hot espresso poured over cold gelato; a delightful contrast of temperatures and flavors.",
+        "recipe": [("espresso", 2), 
+                   ("ice cream", 3)]
+    }
+]
+
+@app.route('/')
+def home():
+   return render_template('home.html')
+
+@app.route('/exploration')
+def exploration():
+   return render_template("exploration.html", coffees=coffees)
+
+if __name__ == '__main__':
+   app.run(debug = True)

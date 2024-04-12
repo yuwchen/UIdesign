@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+	<script type="text/javascript" src="{{ url_for('static', filename = 'exploration.js') }}"></script>
+	<script>
+		let coffees = {{coffees|tojson}} 
+	</script>
+
+	<div id="all-coffees">
+	</div>
+
+{% endblock %}

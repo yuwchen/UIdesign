@@ -1,0 +1,24 @@
+{% extends "layout.html" %} {% block content %}
+
+<script
+  type="text/javascript"
+  src="{{ url_for('static', filename = 'quiz_summary.js') }}"
+></script>
+<script>
+  let quizzes = {{quizzes|tojson}}
+  let count = {{count}}
+</script>
+
+<div id="quiz_scoreboard" class="row">
+  Nice job! You answered 6 questions, and
+  <span id="correctCount"></span> of them are correct!
+</div>
+
+<div id="all-quizzes" class="row"></div>
+
+<div id="quiz-summary-button" class="row">
+  <a href="/" class="button-quiz">Home</a>
+  <a href="/quiz/1" class="button-quiz">Try Again</a>
+</div>
+
+{% endblock %}

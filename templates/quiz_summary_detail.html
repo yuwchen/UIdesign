@@ -1,0 +1,11 @@
+{% extends "layout.html" %} {% block content %}
+
+<script
+  type="text/javascript"
+  src="{{ url_for('static', filename = 'quiz_summary_detail.js') }}"
+></script>
+<script>
+  let quiz = {{quiz|tojson}}
+</script>
+
+{% endblock %}

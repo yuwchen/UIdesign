@@ -11,7 +11,7 @@ function display_coffees() {
                     <p>${c["info"]}</p>
                 </div>
                 <div class="col-5">
-                    <img src='static/images/${c["learned"] ? "check" : "blank"}.png' alt='learned'>
+                    <img src='static/images/${c["learned"] ? "checked" : "blank"}.png' alt='learned'>
                     <img src='static/images/${c["name"].replace(" ", "_")}.png' alt='${c["name"]}'>
                 </div>
             </div>

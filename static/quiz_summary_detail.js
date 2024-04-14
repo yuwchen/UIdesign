@@ -6,7 +6,7 @@ function display_quiz_detail() {
 
   //   const quizName = $("<span>").text(quiz.name).html();
   //   const quizInfo = $("<span>").text(quiz.info).html();
-  //   const correctImage = quiz.correct ? "check" : "unchecked";
+  //   const correctImage = quiz.correct ? "checked" : "unchecked";
   //   const quizImageName = quizName.replace(/ /g, "_");
 
   // Append the quiz details to the container
@@ -19,7 +19,7 @@ function display_quiz_detail() {
         </div>
         <div class="col-md-5">
             <img src='/static/images/${
-              quiz["correct"] ? "check" : "unchecked"
+              quiz["correct"] ? "checked" : "unchecked"
             }.png' alt='correct'>
             <img src='/static/images/${quiz["name"].replace(
               " ",

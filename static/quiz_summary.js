@@ -15,7 +15,7 @@ function display_quiz_summary() {
             </div>
             <div class="col-5">
               <img src='/static/images/${
-                q["correct"] ? "check" : "unchecked"
+                q["correct"] ? "checked" : "unchecked"
               }.png' alt='correct'>
             </div>
           </div>

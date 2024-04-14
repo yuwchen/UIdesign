@@ -47,7 +47,7 @@ body {
   margin: 30px 10px;
 }
 
-.button-explore {
+#btn-explore, #btn-quiz {
   padding: 20px 50px;
   font-size: 2em;
   font-weight: bold;
@@ -63,7 +63,7 @@ body {
   transition: background-color 0.3s;
 }
 
-.button-explore:hover {
+#btn-explore:hover, #btn-quiz:hover {
   color: white;
   text-decoration: none;
   background-color: #a79277; /* Darker green on hover */
@@ -125,6 +125,15 @@ body {
 .detailcard p {
   font-size: 14px;
   line-height: 1.5;
+}
+
+#btn-quiz {
+  font-size: 20px;
+  padding: 20px;
+  display: block;
+  float: right;
+  margin-bottom: 100px;
+  margin-right: 80px;
 }
 
 /* quiz summary */

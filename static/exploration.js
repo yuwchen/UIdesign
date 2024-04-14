@@ -1,8 +1,8 @@
 function display_coffees() {
     $('#all-coffees').empty();
-
     if (!coffees) return;
-
+    
+    var learned = 0;
     coffees.forEach(function (c, _) { 
         $("#all-coffees").append(`
             <div class='card row' data-id=${c["id"]}>
@@ -16,12 +16,20 @@ function display_coffees() {
                 </div>
             </div>
         `);
+
+        learned += c["learned"] ? 1 : 0;
     });
 
     $(".card").click(function(e) {
         window.location.href = "/learn/" + $(this).data('id')
     });
 
+    // only show the quiz button if all coffees have been learned
+    if (learned == coffees.length) {
+        $('#btn-quiz').show();
+    } else  {
+        $('#btn-quiz').hide();
+    }
 }
 
 $(function() {

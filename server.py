@@ -168,6 +168,9 @@ quizzes = [
     }
 ]
 
+current_quiz = 0 
+
+
 @app.route('/')
 def home():
    return render_template('home.html')
@@ -201,6 +204,27 @@ def quiz_summary_detail(quiz_id):
     else:
         return "Quiz not found", 404
 
+@app.route('/quiz_main')
+def quiz_main():
+    global current_quiz
+    return render_template("quiz_main.html", quiz=quizzes[current_quiz], quiz_id=quizzes[current_quiz]['id'] )
+
     
+@app.route('/next_question', methods=['POST'])
+def next_question():
+
+    quiz_id = request.form.get('quiz_id')
+    next_idx = int(quiz_id)+1-1
+
+    return jsonify(quizzes[next_idx])
+
+@app.route('/previous_question', methods=['POST'])
+def previous_question():
+
+    quiz_id = request.form.get('quiz_id')
+    previous_idx = int(quiz_id)-1-1
+
+    return jsonify(quizzes[previous_idx])
+
 if __name__ == '__main__':
    app.run(debug = True)

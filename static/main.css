@@ -249,3 +249,101 @@ body {
   display: block;
   margin-left: 60px;
 }
+
+
+#description{
+  padding: 10pt;
+  margin-top: 30pt;
+}
+
+
+.resize_img{
+  width:30%;
+}
+
+.inline_block{
+  display: inline;
+}
+
+#description{
+  padding: 10px;
+}
+
+.centering{
+text-align: center;
+}
+
+#question_id{
+  font-size: 20pt;
+}
+
+#question{
+padding:10px;
+}
+
+#question_id{
+  padding:10px;
+}
+
+.page_border {
+  border-right: 1px solid #ccc; 
+}
+
+.ingredient_block{
+
+  display: inline-block;
+  text-align: center;
+  border-right: 1px solid #ccc; 
+}
+
+.ingredient_imag{
+  width:30%;
+}
+
+.ingredient_name {
+  display: inline-block;
+  font-size: 10pt;
+}
+
+
+.cup_imag{
+  width:80%;
+
+}
+
+.main_row{
+  text-align: center;
+  padding-top:100pt
+}
+
+.ingredient_container {
+  width: 100%; /* Adjust width as needed */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent content from wrapping */
+}
+
+.main_button_container{
+  position: relative;
+  height: 150px;
+}
+
+.main_btn{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #6F4E37; /* Coffee color hexadecimal code */
+  color: white; 
+  margin-bottom: 50px;
+}
+
+#quiz_next_button{
+  margin-bottom: 0px; 
+}
+
+/* #quiz_previous_button{
+  display: none;
+}*/
+
+#quiz_submit_button{
+  margin-bottom: 0px; 
+} 

@@ -18,6 +18,10 @@ function display_coffees() {
         `);
     });
 
+    $(".card").click(function(e) {
+        window.location.href = "/learn/" + $(this).data('id')
+    });
+
 }
 
 $(function() {

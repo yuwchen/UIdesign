@@ -75,19 +75,15 @@ function selectIngredient(ingredient_name) {
   } else {
     console.log("You cannot add more than 6 ingredients.");
   }
+
+  // update cup layout by user selection
+  for (let i = 1; i <= 6; i++) { 
+    let curr = $('.portion' + i.toString())
+    let color = i <= ingredient_selection.length ? ingred2color[ingredient_selection[i - 1]] : $('.cup').css("background-color")
+    curr.css("background-color", color) 
+  }
 }
 
 $(document).ready(function () {
   display_learn_page(coffee);
-
-  $('.ingredient_block').click(function(e) {
-    for (let i = 6; i >= 1; i--) {
-      let curr = $('.portion' + i.toString())
-      if (curr.css("background-color") == $('.cup').css("background-color")) {
-        curr.css("background-color", $(this).data('color'))
-        break;
-      }
-    }
-  });
-  
 });

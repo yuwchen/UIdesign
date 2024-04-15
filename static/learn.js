@@ -1,3 +1,5 @@
+let ingredient_selection = [];
+
 function display_learn_page(coffee) {
   console.log("load data in view!", coffee);
   $("#description").empty();
@@ -24,25 +26,47 @@ function display_learn_page(coffee) {
   $("#description").append(row);
 
   $("#learn_submit_button").click(function () {
-    $("#learn_button_container").empty();
+    $.ajax({
+      url: "/submit_learn",
+      type: "POST",
+      contentType: "application/json",
+      data: JSON.stringify({ coffee: coffee, input: ingredient_selection}),
+      success: function (result) {
 
-    //check answer, if correct. change to next
-    var row = $(
-      '<div id="learn_response_container">' +
-        '<img id="learn_correct_image" src="../static/images/checked.png">' +
-        "</div>" +
-        '<button id="learn_next_button" class="btn btn-primary main_btn">Next</button>'
-    );
-    $("#learn_button_container").append(row);
+      console.log("current key in view return", result['finished']);
 
-    $("#learn_next_button").click(function () {
-      console.log("Next button click!");
-      window.location.href = "../exploration";
+      if (result['finished'] === true) {
+          console.log("result['finished'] is true");
+          $("#learn_button_container").empty();
+
+          var row = $(
+            '<div id="learn_response_container">' +
+              '<img id="learn_correct_image" src="../static/images/checked.png">' +
+              "</div>" +
+              '<button id="learn_next_button" class="btn btn-primary main_btn">Next</button>'
+          );
+          $("#learn_button_container").append(row);
+      
+          $("#learn_next_button").click(function () {
+            console.log("Next button click!");
+            window.location.href = "../exploration";
+          });
+
+      }else {
+          console.log("result['finished'] is false");
+
+      }
+      },
+      error: function () {
+        console.log("No result found.");
+      },
+      
     });
+
   });
+  
 }
 
-let ingredient_selection = [];
 
 function selectIngredient(ingredient_name) {
   if (ingredient_selection.length < 6) {

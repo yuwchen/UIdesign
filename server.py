@@ -48,7 +48,7 @@ coffees = [
         "id": 6, 
         "name": "Espresso",
         "image": "static/images/espresso.png",
-        "learned": True,
+        "learned": False,
         "info": "A concentrated coffee shot brewed by forcing hot water through finely-ground coffee beans, producing an aromatic beverage with a layer of crema on top.",
         "recipe": ["espresso","espresso","espresso"]
     },
@@ -231,6 +231,30 @@ def learn(index=None):
             the_coffee = coffees[i]
 
     return render_template('learn.html', coffee=the_coffee)
+
+@app.route('/submit_learn', methods=['POST'])
+def submit_learn():
+
+    data = request.get_json()  
+    input = data['input']
+    the_coffee = data['coffee']
+    
+    correct_recipe = the_coffee['recipe']
+
+    finished = True
+    if len(correct_recipe) != len(input):
+        finished = False
+    for i in range(len(input)):
+        if input[i] != correct_recipe[i]:
+            finished = False
+
+    if finished is True:
+        print(finished)
+        for i in range (len(coffees)):
+            if coffees[i]['id']==int(the_coffee['id']):
+                coffees[i]['learned']=True
+        
+    return jsonify({"finished": finished})
 
 if __name__ == '__main__':
    app.run(debug = True)

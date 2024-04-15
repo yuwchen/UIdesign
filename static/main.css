@@ -47,7 +47,8 @@ body {
   margin: 30px 10px;
 }
 
-#btn-explore, #btn-quiz {
+#btn-explore,
+#btn-quiz {
   padding: 20px 50px;
   font-size: 2em;
   font-weight: bold;
@@ -63,7 +64,8 @@ body {
   transition: background-color 0.3s;
 }
 
-#btn-explore:hover, #btn-quiz:hover {
+#btn-explore:hover,
+#btn-quiz:hover {
   color: white;
   text-decoration: none;
   background-color: #a79277; /* Darker green on hover */
@@ -259,54 +261,51 @@ body {
   margin-left: 60px;
 }
 
-
-#description{
+#description {
   padding: 10pt;
   margin-top: 30pt;
 }
 
-
-.resize_img{
-  width:30%;
+.resize_img {
+  width: 30%;
 }
 
-.inline_block{
+.inline_block {
   display: inline;
 }
 
-#description{
+#description {
   padding: 10px;
 }
 
-.centering{
-text-align: center;
+.centering {
+  text-align: center;
 }
 
-#question_id{
+#question_id {
   font-size: 20pt;
 }
 
-#question{
-padding:10px;
+#question {
+  padding: 10px;
 }
 
-#question_id{
-  padding:10px;
+#question_id {
+  padding: 10px;
 }
 
 .page_border {
-  border-right: 1px solid #ccc; 
+  border-right: 1px solid #ccc;
 }
 
-.ingredient_block{
-
+.ingredient_block {
   display: inline-block;
   text-align: center;
-  border-right: 1px solid #ccc; 
+  border-right: 1px solid #ccc;
 }
 
-.ingredient_imag{
-  width:30%;
+.ingredient_imag {
+  width: 30%;
 }
 
 .ingredient_name {
@@ -334,7 +333,7 @@ padding:10px;
   border-bottom: 25px solid transparent;
   border-radius: 50%;
   transform: rotate(42deg);
-} 
+}
 
 .recipe {
   position: absolute;
@@ -383,9 +382,9 @@ padding:10px;
   top: 84%;
 }
 
-.main_row{
+.main_row {
   text-align: center;
-  padding-top:100pt
+  padding-top: 100pt;
 }
 
 .ingredient_container {
@@ -394,37 +393,45 @@ padding:10px;
   white-space: nowrap; /* Prevent content from wrapping */
 }
 
-.main_button_container{
+.main_button_container {
   position: relative;
   height: 150px;
 }
 
-.main_btn{
+.main_btn {
   position: absolute;
   bottom: 0;
   left: 10;
-  background-color: #6F4E37; /* Coffee color hexadecimal code */
-  color: white; 
+  background-color: #6f4e37; /* Coffee color hexadecimal code */
+  color: white;
   margin-bottom: 50px;
 }
-
-#quiz_next_button{
-  margin-bottom: -80px; 
+#quiz_reset_button {
+  margin-bottom: 20px;
 }
 
-#quiz_previous_button{
-  margin-bottom: -30px;  
-}
-#quiz_submit_button{
-  margin-bottom: -80px; 
-} 
-
-#learn_submit_button{
-  margin-bottom: -80px; 
+#quiz_next_button {
+  margin-bottom: -80px;
 }
 
-#learn_next_button{
-  margin-bottom: -80px; 
+#quiz_previous_button {
+  margin-bottom: -30px;
+}
+
+#quiz_submit_button {
+  margin-bottom: -80px;
+}
+
+#learn_reset_button {
+  margin-bottom: 20px;
+}
+
+#learn_submit_button {
+  margin-bottom: -80px;
+}
+
+#learn_next_button {
+  margin-bottom: -80px;
 }
 
 #learn_answer img {
@@ -433,7 +440,7 @@ padding:10px;
   padding-top: 30pt;
 }
 
-#learn_correct_image{
-  width:50%;
+#learn_correct_image {
+  width: 50%;
   margin-left: 50pt;
 }

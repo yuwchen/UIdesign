@@ -2,20 +2,20 @@ function display_question_on_quiz_page(quiz, quiz_id) {
   if (quiz_id == 1) {
     $("#main_button_container").empty();
     var row = $(
-      '<button id="quiz_next_button" class="btn btn-primary main_btn">Next</button>'
+      '<button id="quiz_reset_button" class="btn btn-primary main_btn">Reset</button><button id="quiz_next_button" class="btn btn-primary main_btn">Next</button>'
     );
     $("#main_button_container").append(row);
   } else if (quiz_id > 1 && quiz_id < 6) {
     console.log("load data in view!WQEKWKLFJKLFJWELWEFJ");
     $("#main_button_container").empty();
     var row = $(
-      '<button id="quiz_previous_button" class="btn btn-primary main_btn">Previous</button> <button id="quiz_next_button" class="btn btn-primary main_btn">Next</button>'
+      '<button id="quiz_reset_button" class="btn btn-primary main_btn">Reset</button> <button id="quiz_previous_button" class="btn btn-primary main_btn">Previous</button> <button id="quiz_next_button" class="btn btn-primary main_btn">Next</button>'
     );
     $("#main_button_container").append(row);
   } else if (quiz_id == 6) {
     $("#main_button_container").empty();
     var row = $(
-      '<button id="quiz_previous_button" class="btn btn-primary main_btn">Previous</button> <button id="quiz_submit_button" class="btn btn-primary main_btn">Submit</a>'
+      '<button id="quiz_reset_button" class="btn btn-primary main_btn">Reset</button> <button id="quiz_previous_button" class="btn btn-primary main_btn">Previous</button> <button id="quiz_submit_button" class="btn btn-primary main_btn">Submit</a>'
     );
     $("#main_button_container").append(row);
   }
@@ -51,6 +51,11 @@ function display_question_on_quiz_page(quiz, quiz_id) {
 
   $("#description").append(row);
 
+  $("#quiz_reset_button").click(function () {
+    ingredient_selection = [];
+    console.log("Ingredient selection has been reset.");
+  });
+
   $("#quiz_next_button").click(function () {
     $.ajax({
       url: "/next_question",
@@ -59,7 +64,6 @@ function display_question_on_quiz_page(quiz, quiz_id) {
       data: JSON.stringify({ quiz_id: quiz_id, input: ingredient_selection }),
       success: function (newQuiz) {
         ingredient_selection = [];
-        // Replace the existing data with the new data
         console.log("current key in view return", newQuiz["id"]);
         display_question_on_quiz_page(newQuiz, newQuiz["id"]);
       },
@@ -70,7 +74,6 @@ function display_question_on_quiz_page(quiz, quiz_id) {
   });
 
   $("#quiz_previous_button").click(function () {
-    // Send the data['price'] information to the server
     $.ajax({
       url: "/previous_question",
       type: "POST",
@@ -78,8 +81,6 @@ function display_question_on_quiz_page(quiz, quiz_id) {
       data: JSON.stringify({ quiz_id: quiz_id, input: ingredient_selection }),
       success: function (newQuiz) {
         ingredient_selection = [];
-        // Replace the existing data with the new data
-        console.log(input);
         console.log("current key in view return", newQuiz["id"]);
         display_question_on_quiz_page(newQuiz, newQuiz["id"]);
       },
@@ -116,10 +117,13 @@ function selectIngredient(ingredient_name) {
   }
 
   // update cup layout by user selection
-  for (let i = 1; i <= 6; i++) { 
-    let curr = $('.portion' + i.toString())
-    let color = i <= ingredient_selection.length ? ingred2color[ingredient_selection[i - 1]] : $('.cup').css("background-color")
-    curr.css("background-color", color) 
+  for (let i = 1; i <= 6; i++) {
+    let curr = $(".portion" + i.toString());
+    let color =
+      i <= ingredient_selection.length
+        ? ingred2color[ingredient_selection[i - 1]]
+        : $(".cup").css("background-color");
+    curr.css("background-color", color);
   }
 }
 

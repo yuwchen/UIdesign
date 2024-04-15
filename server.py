@@ -10,7 +10,7 @@ coffees = [
         "image": "static/images/latte.png",
         "learned": True,
         "info": "Espresso blended with silky steamed milk for a creamy texture and balanced flavor profile.",
-        "recipe": ["espresso", "espresso", "steamed milk","steamed milk","steamed milk","milk foam"]
+        "recipe": ["espresso", "espresso", "milk","milk","milk","milk foam"]
     },
     {
         "id": 2,
@@ -18,7 +18,7 @@ coffees = [
         "image": "static/images/flat_white.png",
         "learned": True,
         "info": "A bold espresso shot with a smooth layer of microfoam, creating a velvety texture and strong coffee taste.",
-        "recipe": ["espresso", "steamed milk","steamed milk"],
+        "recipe": ["espresso", "milk","milk"],
     },
     {
         "id": 3, 
@@ -34,7 +34,7 @@ coffees = [
         "image": "static/images/mocha.png",
         "learned": True,
         "info": "Rich espresso infused with decadent chocolate syrup and creamy steamed milk, offering a delightful blend of bitter and sweet notes.",
-        "recipe": ["espresso", "hot chocolate", "steamed milk", "steamed milk", "whipped cream"]
+        "recipe": ["espresso", "hot chocolate", "milk", "milk", "whipped cream"]
     },
     {
         "id": 5, 
@@ -42,7 +42,7 @@ coffees = [
         "image": "static/images/cappuccino.png",
         "learned": True,
         "info": "A harmonious combination of espresso, steamed milk, and frothed milk, resulting in a creamy texture and bold coffee flavor.",
-        "recipe": ["espresso", "steamed milk", "milk foam"]
+        "recipe": ["espresso", "milk", "milk foam"]
     },
     {
         "id": 6, 
@@ -84,37 +84,34 @@ quizzes = [
         "name": "Latte",
         "image": "static/images/latte.png",
         "info": "Espresso blended with silky steamed milk for a creamy texture and balanced flavor profile.",
-        "recipe": ["espresso", "espresso", "steamed milk","steamed milk","steamed milk","milk foam"],
+        "recipe": ["espresso", "espresso", "milk","milk","milk","milk foam"],
         "input": [],
-        "correct": True
+        "correct": False
     },
     {
         "id": 2,
         "name": "Flat White",
         "image": "static/images/flat_white.png",
-        "learned": False,
         "info": "A bold espresso shot with a smooth layer of microfoam, creating a velvety texture and strong coffee taste.",
-        "recipe": ["espresso", "steamed milk","steamed milk"],
+        "recipe": ["espresso", "milk","milk"],
         "input": [],
-        "correct": True
+        "correct": False
     },
     {
         "id": 3, 
         "name": "Americano",
         "image": "static/images/americano.png",
-        "learned": True,
         "info": "Hot water added to espresso for a lighter coffee experience, maintaining the espresso's robust flavor.",
         "recipe": ["espresso",  "water"],
         "input": [],
-        "correct": True
+        "correct": False
     },
     {
         "id": 4, 
         "name": "Mocha",
         "image": "static/images/mocha.png",
-        "learned": False,
         "info": "Rich espresso infused with decadent chocolate syrup and creamy steamed milk, offering a delightful blend of bitter and sweet notes.",
-        "recipe": ["espresso", "hot chocolate", "steamed milk", "steamed milk", "whipped cream"],
+        "recipe": ["espresso", "hot chocolate", "milk", "milk", "whipped cream"],
         "input": [],
         "correct": False
     },
@@ -122,9 +119,8 @@ quizzes = [
         "id": 5, 
         "name": "Cappuccino",
         "image": "static/images/cappuccino.png",
-        "learned": True,
         "info": "A harmonious combination of espresso, steamed milk, and frothed milk, resulting in a creamy texture and bold coffee flavor.",
-        "recipe": ["espresso", "steamed milk", "milk foam"],
+        "recipe": ["espresso", "milk", "milk foam"],
         "input": [],
         "correct": False
     },
@@ -132,11 +128,10 @@ quizzes = [
         "id": 6, 
         "name": "Espresso",
         "image": "static/images/espresso.png",
-        "learned": False,
         "info": "A concentrated coffee shot brewed by forcing hot water through finely-ground coffee beans, producing an aromatic beverage with a layer of crema on top.",
         "recipe": ["espresso","espresso","espresso"],
         "input": [],
-        "correct": True
+        "correct": False
     }
 ]
 

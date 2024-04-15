@@ -96,7 +96,6 @@ function display_question_on_quiz_page(quiz, quiz_id) {
       contentType: "application/json",
       data: JSON.stringify({ quiz_id: quiz_id, input: ingredient_selection }),
       success: function () {
-        print(quizzes);
         window.location.href = "/quiz_summary";
       },
       error: function () {

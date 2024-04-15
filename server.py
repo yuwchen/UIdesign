@@ -212,19 +212,48 @@ def quiz_main():
     
 @app.route('/next_question', methods=['POST'])
 def next_question():
-
-    quiz_id = request.form.get('quiz_id')
+    data = request.get_json() 
+    quiz_id = data['quiz_id']
+    input = data['input']  
     next_idx = int(quiz_id)+1-1
+
+    # update data first
+    current_quiz_index = int(quiz_id)-1
+    quizzes[current_quiz_index]['input'] = input
+    print(quizzes[current_quiz_index]['input'])
+    quizzes[current_quiz_index]['correct'] = (input == quizzes[current_quiz_index]['recipe'])
 
     return jsonify(quizzes[next_idx])
 
 @app.route('/previous_question', methods=['POST'])
 def previous_question():
 
-    quiz_id = request.form.get('quiz_id')
+    data = request.get_json()  
+    quiz_id = data['quiz_id']
+    input = data['input']
     previous_idx = int(quiz_id)-1-1
 
+    # update data first
+    current_quiz_index = int(quiz_id)-1
+    quizzes[current_quiz_index]['input'] = input
+    quizzes[current_quiz_index]['correct'] = (input == quizzes[current_quiz_index]['recipe'])
+
     return jsonify(quizzes[previous_idx])
+
+@app.route('/update_quiz', methods=['POST'])
+def update_quiz():
+    data = request.get_json()  
+    quiz_id = data['quiz_id']
+    input = data['input']
+    
+    for quiz in quizzes:
+        if quiz['id'] == quiz_id:
+            quiz['input'] = input
+            # update correctness
+            quiz['correct'] = (quiz['input'] == quiz['recipe'])
+            break
+    print(quizzes)
+    return jsonify({"message": "Quiz updated successfully"})
 
 @app.route('/learn/<index>')
 def learn(index=None):

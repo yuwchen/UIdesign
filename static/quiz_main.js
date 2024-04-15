@@ -53,6 +53,7 @@ function display_question_on_quiz_page(quiz, quiz_id) {
 
   $("#quiz_reset_button").click(function () {
     ingredient_selection = [];
+    updateCup(ingredient_selection);
     console.log("Ingredient selection has been reset.");
   });
 
@@ -116,15 +117,7 @@ function selectIngredient(ingredient_name) {
     console.log("You cannot add more than 6 ingredients.");
   }
 
-  // update cup layout by user selection
-  for (let i = 1; i <= 6; i++) {
-    let curr = $(".portion" + i.toString());
-    let color =
-      i <= ingredient_selection.length
-        ? ingred2color[ingredient_selection[i - 1]]
-        : $(".cup").css("background-color");
-    curr.css("background-color", color);
-  }
+  updateCup(ingredient_selection);
 }
 
 $(document).ready(function () {

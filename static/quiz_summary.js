@@ -33,7 +33,7 @@ function display_quiz_summary() {
       "click",
       (function (quizId) {
         return function () {
-          window.location.href = `/quiz/summary/${quizId}`;
+          window.location.href = `/quiz_summary/${quizId}`;
         };
       })(q["id"])
     );

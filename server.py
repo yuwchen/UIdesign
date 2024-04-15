@@ -179,7 +179,7 @@ def home():
 def exploration():
    return render_template("exploration.html", coffees=coffees)
 
-@app.route('/quiz/summary')
+@app.route('/quiz_summary')
 def quiz_summary():
     def count_correct(quizzes):
         count = 0
@@ -190,7 +190,7 @@ def quiz_summary():
 
     return render_template('quiz_summary.html', quizzes=quizzes, count=count_correct(quizzes))
 
-@app.route('/quiz/summary/<quiz_id>')
+@app.route('/quiz_summary/<quiz_id>')
 def quiz_summary_detail(quiz_id):
     def find_quiz_by_id(quiz_id):
         for quiz in quizzes:

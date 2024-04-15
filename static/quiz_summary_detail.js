@@ -3,13 +3,6 @@ function display_quiz_detail() {
   quizDetailsContainer.empty();
 
   if (!quiz) return;
-
-  //   const quizName = $("<span>").text(quiz.name).html();
-  //   const quizInfo = $("<span>").text(quiz.info).html();
-  //   const correctImage = quiz.correct ? "checked" : "unchecked";
-  //   const quizImageName = quizName.replace(/ /g, "_");
-
-  // Append the quiz details to the container
   quizDetailsContainer.append(`
     <div class='detailcard' data-id='${quiz.id}'>
     <div class="row">

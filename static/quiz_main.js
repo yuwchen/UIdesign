@@ -118,4 +118,14 @@ function selectIngredient(ingredient_name) {
 
 $(document).ready(function () {
   display_question_on_quiz_page(quiz, quiz_id);
+
+  $('.ingredient_block').click(function(e) {
+    for (let i = 6; i >= 1; i--) {
+      let curr = $('.portion' + i.toString())
+      if (curr.css("background-color") == $('.cup').css("background-color")) {
+        curr.css("background-color", $(this).data('color'))
+        break;
+      }
+    }
+  });
 });

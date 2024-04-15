@@ -10,9 +10,7 @@ coffees = [
         "image": "static/images/latte.png",
         "learned": True,
         "info": "Espresso blended with silky steamed milk for a creamy texture and balanced flavor profile.",
-        "recipe": [("espresso", 2), 
-                   ("steamed milk", 3), 
-                   ("milk foam", 1)]
+        "recipe": ["espresso", "espresso", "steamed milk","steamed milk","steamed milk","milk foam"]
     },
     {
         "id": 2,
@@ -20,8 +18,7 @@ coffees = [
         "image": "static/images/flat_white.png",
         "learned": True,
         "info": "A bold espresso shot with a smooth layer of microfoam, creating a velvety texture and strong coffee taste.",
-        "recipe": [("espresso", 1), 
-                   ("steamed milk", 2)],
+        "recipe": ["espresso", "steamed milk","steamed milk"],
     },
     {
         "id": 3, 
@@ -29,8 +26,7 @@ coffees = [
         "image": "static/images/americano.png",
         "learned": True,
         "info": "Hot water added to espresso for a lighter coffee experience, maintaining the espresso's robust flavor.",
-        "recipe": [("espresso", 1), 
-                   ("water", 1)]
+        "recipe": ["espresso",  "water"]
     },
     {
         "id": 4, 
@@ -38,10 +34,7 @@ coffees = [
         "image": "static/images/mocha.png",
         "learned": True,
         "info": "Rich espresso infused with decadent chocolate syrup and creamy steamed milk, offering a delightful blend of bitter and sweet notes.",
-        "recipe": [("espresso", 1),
-                   ("hot chocolate", 1),
-                   ("steamed milk", 2), 
-                   ("whipped cream", 1)]
+        "recipe": ["espresso", "hot chocolate", "steamed milk", "steamed milk", "whipped cream"]
     },
     {
         "id": 5, 
@@ -49,9 +42,7 @@ coffees = [
         "image": "static/images/cappuccino.png",
         "learned": True,
         "info": "A harmonious combination of espresso, steamed milk, and frothed milk, resulting in a creamy texture and bold coffee flavor.",
-        "recipe": [("espresso", 1), 
-                   ("steamed milk", 1), 
-                   ("milk foam", 1)]
+        "recipe": ["espresso", "steamed milk", "milk foam"]
     },
     {
         "id": 6, 
@@ -59,7 +50,7 @@ coffees = [
         "image": "static/images/espresso.png",
         "learned": True,
         "info": "A concentrated coffee shot brewed by forcing hot water through finely-ground coffee beans, producing an aromatic beverage with a layer of crema on top.",
-        "recipe": [("espresso", 3)]
+        "recipe": ["espresso","espresso","espresso"]
     },
     {
         "id": 7, 
@@ -67,9 +58,7 @@ coffees = [
         "image": "static/images/irish_coffee.png",
         "learned": True,
         "info": "Whiskey-spiked coffee topped with cream; a cozy, spirited treat with a caffeine kick.",
-        "recipe": [("espresso", 2), 
-                   ("whiskey", 1), 
-                   ("whipped cream", 1)]
+        "recipe": ["espresso","espresso","whiskey", "whipped cream"]
     },
     {
         "id": 8, 
@@ -77,8 +66,7 @@ coffees = [
         "image": "static/images/macchiato.png",
         "learned": True,
         "info": "Espresso \"stained\" with a dollop of frothy milk; a bold, balanced coffee indulgence.",
-        "recipe": [("espresso", 1), 
-                   ("milk foam", 2)]
+        "recipe": ["espresso", "milk foam", "milk foam"]
     },
     {
         "id": 9, 
@@ -86,8 +74,7 @@ coffees = [
         "image": "static/images/affogato.png",
         "learned": True,
         "info": "Hot espresso poured over cold gelato; a delightful contrast of temperatures and flavors.",
-        "recipe": [("espresso", 2), 
-                   ("ice cream", 3)]
+        "recipe": ["espresso","espresso", "ice cream","ice cream","ice cream"]
     }
 ]
 
@@ -97,12 +84,8 @@ quizzes = [
         "name": "Latte",
         "image": "static/images/latte.png",
         "info": "Espresso blended with silky steamed milk for a creamy texture and balanced flavor profile.",
-        "recipe": [("espresso", 2), 
-                   ("steamed milk", 3), 
-                   ("milk foam", 1)],
-        "input": [("espresso", 2), 
-                   ("steamed milk", 3), 
-                   ("milk foam", 1)],
+        "recipe": ["espresso", "espresso", "steamed milk","steamed milk","steamed milk","milk foam"],
+        "input": [],
         "correct": True
     },
     {
@@ -111,10 +94,8 @@ quizzes = [
         "image": "static/images/flat_white.png",
         "learned": False,
         "info": "A bold espresso shot with a smooth layer of microfoam, creating a velvety texture and strong coffee taste.",
-        "recipe": [("espresso", 1), 
-                   ("steamed milk", 2)],
-        "input": [("espresso", 1), 
-                   ("steamed milk", 2)],
+        "recipe": ["espresso", "steamed milk","steamed milk"],
+        "input": [],
         "correct": True
     },
     {
@@ -123,10 +104,8 @@ quizzes = [
         "image": "static/images/americano.png",
         "learned": True,
         "info": "Hot water added to espresso for a lighter coffee experience, maintaining the espresso's robust flavor.",
-        "recipe": [("espresso", 1), 
-                   ("water", 1)],
-        "input": [("espresso", 1), 
-                   ("water", 1)],
+        "recipe": ["espresso",  "water"],
+        "input": [],
         "correct": True
     },
     {
@@ -135,12 +114,8 @@ quizzes = [
         "image": "static/images/mocha.png",
         "learned": False,
         "info": "Rich espresso infused with decadent chocolate syrup and creamy steamed milk, offering a delightful blend of bitter and sweet notes.",
-        "recipe": [("espresso", 1),
-                   ("hot chocolate", 1),
-                   ("steamed milk", 2), 
-                   ("whipped cream", 1)],
-        "input": [("espresso", 1), 
-                   ("steamed milk", 2)],
+        "recipe": ["espresso", "hot chocolate", "steamed milk", "steamed milk", "whipped cream"],
+        "input": [],
         "correct": False
     },
     {
@@ -149,11 +124,8 @@ quizzes = [
         "image": "static/images/cappuccino.png",
         "learned": True,
         "info": "A harmonious combination of espresso, steamed milk, and frothed milk, resulting in a creamy texture and bold coffee flavor.",
-        "recipe": [("espresso", 1), 
-                   ("steamed milk", 1), 
-                   ("milk foam", 1)],
-        "input": [("espresso", 1), 
-                   ("steamed milk", 2)],
+        "recipe": ["espresso", "steamed milk", "milk foam"],
+        "input": [],
         "correct": False
     },
     {
@@ -162,8 +134,8 @@ quizzes = [
         "image": "static/images/espresso.png",
         "learned": False,
         "info": "A concentrated coffee shot brewed by forcing hot water through finely-ground coffee beans, producing an aromatic beverage with a layer of crema on top.",
-        "recipe": [("espresso", 3)],
-        "input": [("espresso", 3)],
+        "recipe": ["espresso","espresso","espresso"],
+        "input": [],
         "correct": True
     }
 ]
@@ -221,6 +193,7 @@ def next_question():
     current_quiz_index = int(quiz_id)-1
     quizzes[current_quiz_index]['input'] = input
     print(quizzes[current_quiz_index]['input'])
+    
     quizzes[current_quiz_index]['correct'] = (input == quizzes[current_quiz_index]['recipe'])
 
     return jsonify(quizzes[next_idx])

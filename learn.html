@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename='learn.js') }}"></script>
+
+<script>
+    let coffee = {{coffee|tojson}} 
+    console.log(coffee)
+</script>
+
+<body>
+    <div class="container"> 
+        <div class="row">
+        
+        <div class="col-md-3 main_col_3 page_border" >
+            <div class="row" id="description">
+
+            </div>
+        </div>
+
+        <div class="col-md-9 main_col_9" >
+
+            <div class="ingredient_container">
+
+            <div class="row">
+                <div class="scrollable-content">
+                <div class="ingredient_block">
+                    <a class="ingredient_name">Milk + 1</a>
+                    <div class="ingredient_image">
+                        <img class="ingredient_imag" src="../static/images/milk.png">
+                    </div>
+                </div>
+
+                <div class="ingredient_block">
+                    <a class="ingredient_name">Milk Foam + 1</a>
+                    <div class="ingredient_image">
+                        <img class="ingredient_imag" src="../static/images/foam.png">
+                    </div>
+                </div>
+
+                <div class="ingredient_block">
+                    <a class="ingredient_name">Espresso + 1</a>
+                    <div class="ingredient_image">
+                        <img class="ingredient_imag" src="../static/images/espresso_icon.png">
+                    </div>
+                </div>
+
+                <div class="ingredient_block">
+                    <a class="ingredient_name">Water + 1</a>
+                    <div class="ingredient_image">
+                        <img class="ingredient_imag" src="../static/images/water.png">
+                    </div>
+                </div>
+                
+                <div class="ingredient_block">
+                    <a class="ingredient_name">Whiskey + 1</a>
+                    <div class="ingredient_image">
+                        <img class="ingredient_imag" src="../static/images/whiskey.png">
+                    </div>
+                </div>
+
+                <div class="ingredient_block">
+                    <a class="ingredient_name">Hot chocolate + 1</a>
+                    <div class="ingredient_image">
+                        <img class="ingredient_imag" src="../static/images/chocolate.png">
+                    </div>
+                </div>
+
+                <div class="ingredient_block">
+                    <a class="ingredient_name">Ice cream + 1</a>
+                    <div class="ingredient_image">
+                        <img class="ingredient_imag" src="../static/images/ice_cream.png">
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+
+            <div class="row main_row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <img class="cup_imag" src="../static/images/empty_cup.png">
+                </div>
+                <div class="col-md-3 main_button_container" id="learn_button_container">
+        
+                    <button id="learn_submit_button" class="btn btn-primary main_btn">Submit</button>
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+    </div>
+    </body>
+
+
+{% endblock %}

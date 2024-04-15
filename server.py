@@ -226,5 +226,14 @@ def previous_question():
 
     return jsonify(quizzes[previous_idx])
 
+@app.route('/learn/<index>')
+def learn(index=None):
+
+    for i in range (len(coffees)):
+        if coffees[i]['id']==int(index):
+            the_coffee = coffees[i]
+
+    return render_template('learn.html', coffee=the_coffee)
+
 if __name__ == '__main__':
    app.run(debug = True)

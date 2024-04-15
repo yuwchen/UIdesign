@@ -314,10 +314,73 @@ padding:10px;
   font-size: 10pt;
 }
 
+.cup {
+  position: relative;
+  width: 280px;
+  height: 300px;
+  border-bottom-left-radius: 45%;
+  border-bottom-right-radius: 45%;
+  background: #dcdcdc;
+}
 
-.cup_imag{
-  width:80%;
+.handle {
+  position: absolute;
+  right: -80px;
+  top: 40px;
+  width: 160px;
+  height: 180px;
+  border: 25px solid #dcdcdc;
+  border-left: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-radius: 50%;
+  transform: rotate(42deg);
+} 
 
+.recipe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-bottom-left-radius: 45%;
+  border-bottom-right-radius: 45%;
+}
+
+.portion {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+}
+
+.portion1 {
+  background-color: #dcdcdc;
+  top: 4%;
+}
+
+.portion2 {
+  background-color: #dcdcdc;
+  top: 20%;
+}
+
+.portion3 {
+  background-color: #dcdcdc;
+  top: 36%;
+}
+
+.portion4 {
+  background-color: #dcdcdc;
+  top: 52%;
+}
+
+.portion5 {
+  background-color: #dcdcdc;
+  top: 68%;
+}
+
+.portion6 {
+  background-color: #dcdcdc;
+  top: 84%;
 }
 
 .main_row{

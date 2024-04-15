@@ -65,6 +65,7 @@ function display_question_on_quiz_page(quiz, quiz_id) {
       data: JSON.stringify({ quiz_id: quiz_id, input: ingredient_selection }),
       success: function (newQuiz) {
         ingredient_selection = [];
+        updateCup(ingredient_selection);
         console.log("current key in view return", newQuiz["id"]);
         display_question_on_quiz_page(newQuiz, newQuiz["id"]);
       },
@@ -82,6 +83,7 @@ function display_question_on_quiz_page(quiz, quiz_id) {
       data: JSON.stringify({ quiz_id: quiz_id, input: ingredient_selection }),
       success: function (newQuiz) {
         ingredient_selection = [];
+        updateCup(ingredient_selection);
         console.log("current key in view return", newQuiz["id"]);
         display_question_on_quiz_page(newQuiz, newQuiz["id"]);
       },

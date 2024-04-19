@@ -2,20 +2,20 @@ function display_question_on_quiz_page(quiz, quiz_id) {
   if (quiz_id == 1) {
     $("#main_button_container").empty();
     var row = $(
-      '<button id="quiz_reset_button" class="btn btn-primary main_btn">Reset</button><button id="quiz_next_button" class="btn btn-primary main_btn">Next</button>'
+      '<button id="quiz_reset_button" class="btn btn-primary main_btn">Empty Cup</button><button id="quiz_next_button" class="btn btn-primary main_btn">Next</button>'
     );
     $("#main_button_container").append(row);
   } else if (quiz_id > 1 && quiz_id < 6) {
     console.log("load data in view!WQEKWKLFJKLFJWELWEFJ");
     $("#main_button_container").empty();
     var row = $(
-      '<button id="quiz_reset_button" class="btn btn-primary main_btn">Reset</button> <button id="quiz_previous_button" class="btn btn-primary main_btn">Previous</button> <button id="quiz_next_button" class="btn btn-primary main_btn">Next</button>'
+      '<button id="quiz_reset_button" class="btn btn-primary main_btn">Empty Cup</button> <button id="quiz_previous_button" class="btn btn-primary main_btn">Previous</button> <button id="quiz_next_button" class="btn btn-primary main_btn">Next</button>'
     );
     $("#main_button_container").append(row);
   } else if (quiz_id == 6) {
     $("#main_button_container").empty();
     var row = $(
-      '<button id="quiz_reset_button" class="btn btn-primary main_btn">Reset</button> <button id="quiz_previous_button" class="btn btn-primary main_btn">Previous</button> <button id="quiz_submit_button" class="btn btn-primary main_btn">Submit</a>'
+      '<button id="quiz_reset_button" class="btn btn-primary main_btn">Empty Cup</button> <button id="quiz_previous_button" class="btn btn-primary main_btn">Previous</button> <button id="quiz_submit_button" class="btn btn-primary main_btn">Submit</a>'
     );
     $("#main_button_container").append(row);
   }

@@ -60,6 +60,24 @@ function display_learn_page(coffee) {
           console.log("result['finished'] is false");
           ingredient_selection = [];
           updateCup(ingredient_selection);
+          $("#learn_response_container").empty();
+
+          var errorImage = $("<img>", {
+            id: "learn_incorrect_image",
+            src: "../static/images/unchecked.png",
+          });
+
+          var tryAgainText = $("<p>", {
+            text: "Try Again",
+            class: "try-again-text",
+          });
+
+          $("#learn_response_container").append(errorImage, tryAgainText);
+
+          setTimeout(function () {
+            $("#learn_incorrect_image").remove();
+            $(".try-again-text").remove();
+          }, 1000);
         }
       },
       error: function () {

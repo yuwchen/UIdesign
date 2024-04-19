@@ -102,7 +102,7 @@ quizzes = [
         "name": "Americano",
         "image": "static/images/americano.png",
         "info": "Hot water added to espresso for a lighter coffee experience, maintaining the espresso's robust flavor.",
-        "recipe": ["espresso",  "water"],
+        "recipe": ["espresso", "water"],
         "input": [],
         "correct": False
     },

@@ -139,8 +139,8 @@ def quiz_main():
     global current_quiz
     return render_template("quiz_main.html", quiz=quizzes[current_quiz], quiz_id=quizzes[current_quiz]['id'] )
 
-@app.route('/quiz_main_try_again')
-def quiz_main_try_again():
+@app.route('/quiz_main_reset')
+def quiz_main_reset():
     global current_quiz
     global quizzes
     current_quiz=0

@@ -19,8 +19,8 @@ body {
 .navbar-line {
   border-bottom: 1px solid #d3d3d3;
   margin: 0px 60px;
-  padding-top: 20px; /* Increase the top padding */
-  padding-bottom: 10px; /* Increase the bottom padding */
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 .navbar-brand {
@@ -68,10 +68,39 @@ body {
 #btn-quiz:hover {
   color: white;
   text-decoration: none;
-  background-color: #a79277; /* Darker green on hover */
+  background-color: #a79277;
 }
 
-/* exploration styles */
+/* exploration styles */ 
+.exploration {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+#start-quiz {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 20px;
+}
+
+#quiz-label {
+  font-size: 1.5em;
+  margin: 20px;
+}
+
+#btn-quiz {
+  font-size: 1.2em;
+  padding: 10px 20px;
+}
+
+#btn-quiz img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
 
 #all-coffees {
   margin: 0 20px;
@@ -129,15 +158,6 @@ body {
   line-height: 1.5;
 }
 
-#btn-quiz {
-  font-size: 20px;
-  padding: 20px;
-  display: block;
-  float: right;
-  margin-bottom: 100px;
-  margin-right: 80px;
-}
-
 #quiz_scoreboard {
   display: flex;
   justify-content: center;
@@ -163,6 +183,7 @@ body {
   gap: 30px;
   padding-top: 30px;
 }
+
 .quizsummarycard {
   display: flex;
   flex-direction: column;
@@ -252,6 +273,7 @@ body {
   margin-top: 40px;
   padding: 15px;
 }
+
 .answer-detail .row {
   justify-content: center;
   align-items: center;
@@ -298,11 +320,10 @@ body {
   font-size: 18pt;
 }
 
-.question_coffee{
+.question_coffee {
   font-weight: bold;
   color:#6f4e37;
 }
-
 
 .page_border {
   border-right: 3px solid #f3f2f2;
@@ -320,7 +341,7 @@ body {
   vertical-align: top;
 }
 
-.info_block{
+.info_block {
   border: 1px solid #f8f8f8;
   border-radius: 16px;
   padding: 20px;
@@ -328,35 +349,33 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
   background-color: #f8f8f8;
-  
 }
-.coffee_image{
+
+.coffee_image {
   text-align: center;
   padding-right:10pt;
   padding-left:10pt;
-
   padding-bottom:5pt;
 }
-.coffee_name{
+
+.coffee_name {
   font-size: 20pt;
   font-weight: bold;
   margin-top: -10pt;
 }
 
-.coffee_info{
+.coffee_info {
   margin:20pt;
   padding-right:5pt;
   padding-top:30pt;
-
 }
 
-.coffee_info_row{
-padding-left: 10pt;
-padding-right: 5pt;
-padding-top:10pt;
-font-size: 13pt;
+.coffee_info_row {
+  padding-left: 10pt;
+  padding-right: 5pt;
+  padding-top:10pt;
+  font-size: 13pt;
 }
-
 
 .ingredient_imag {
   width: 70%;
@@ -370,10 +389,11 @@ font-size: 13pt;
   vertical-align: top;
 }
 
-.add_one{
+.add_one {
   color:#cea97b;
   font-weight: bold;
 }
+
 .cup {
   position: relative;
   width: 280px;
@@ -449,9 +469,9 @@ font-size: 13pt;
 }
 
 .ingredient_container {
-  width: 100%; /* Adjust width as needed */
-  overflow-x: auto; /* Enable horizontal scrolling */
-  white-space: nowrap; /* Prevent content from wrapping */
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
   border-bottom: 3px solid #f3f2f2;
 }
 
@@ -464,10 +484,11 @@ font-size: 13pt;
   position: absolute;
   bottom: 0;
   left: 10;
-  background-color: #6f4e37; /* Coffee color hexadecimal code */
+  background-color: #6f4e37;
   color: white;
   margin-bottom: 50px;
 }
+
 #quiz_reset_button {
   margin-bottom: 20px;
 }

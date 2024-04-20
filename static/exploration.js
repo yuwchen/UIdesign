@@ -26,9 +26,9 @@ function display_coffees() {
 
     // only show the quiz button if all coffees have been learned
     if (learned == coffees.length) {
-        $('#btn-quiz').show();
+        $('#start-quiz').show();
     } else  {
-        $('#btn-quiz').hide();
+        $('#start-quiz').hide();
     }
 }
 

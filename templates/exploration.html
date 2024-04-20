@@ -7,7 +7,15 @@
 		let coffees = {{coffees|tojson}} 
 	</script>
 
-	<div id="all-coffees"></div>
-	<a href="/quiz_main_reset" id="btn-quiz">Ready for Quiz!</a>
+	<div class="exploration">
+		<div id="start-quiz">
+			<h1 class="dark-coffee" id="quiz-label">It's time to test what you have learned: </h1> 
+			<button id="btn-quiz" onclick="window.location.href='/quiz_main_reset'">
+				<img src="../static/images/quiz-white.png" alt="buttonpng" border="0" />
+				Ready for Quiz!
+			</button>
+		</div>
+		<div id="all-coffees"></div>
+	</div>
 
 {% endblock %}

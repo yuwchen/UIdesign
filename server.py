@@ -50,7 +50,7 @@ coffees = [
         "name": "Espresso",
         "image": "static/images/espresso.png",
         "learned": False,
-        "info": "A concentrated coffee shot brewed by forcing hot water through finely-ground coffee beans, producing an aromatic beverage with a layer of crema on top.",
+        "info": "A strong coffee brewed by forcing hot water through finely-ground beans, resulting in a fragrant drink topped with crema.",
         "recipe": ["espresso","espresso","espresso"]
     },
     {

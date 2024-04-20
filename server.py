@@ -1,3 +1,4 @@
+import random
 from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
@@ -78,62 +79,24 @@ coffees = [
     }
 ]
 
-quizzes = [
-    {
-        "id": 1,
-        "name": "Latte",
-        "image": "static/images/latte.png",
-        "info": "Espresso blended with silky steamed milk for a creamy texture and balanced flavor profile.",
-        "recipe": ["espresso", "espresso", "milk","milk","milk","milk foam"],
-        "input": [],
-        "correct": False
-    },
-    {
-        "id": 2,
-        "name": "Flat White",
-        "image": "static/images/flat_white.png",
-        "info": "A bold espresso shot with a smooth layer of microfoam, creating a velvety texture and strong coffee taste.",
-        "recipe": ["espresso", "milk","milk"],
-        "input": [],
-        "correct": False
-    },
-    {
-        "id": 3, 
-        "name": "Americano",
-        "image": "static/images/americano.png",
-        "info": "Hot water added to espresso for a lighter coffee experience, maintaining the espresso's robust flavor.",
-        "recipe": ["espresso", "water"],
-        "input": [],
-        "correct": False
-    },
-    {
-        "id": 4, 
-        "name": "Mocha",
-        "image": "static/images/mocha.png",
-        "info": "Rich espresso infused with decadent chocolate syrup and creamy steamed milk, offering a delightful blend of bitter and sweet notes.",
-        "recipe": ["espresso", "hot chocolate", "milk", "milk", "whipped cream"],
-        "input": [],
-        "correct": False
-    },
-    {
-        "id": 5, 
-        "name": "Cappuccino",
-        "image": "static/images/cappuccino.png",
-        "info": "A harmonious combination of espresso, steamed milk, and frothed milk, resulting in a creamy texture and bold coffee flavor.",
-        "recipe": ["espresso", "milk", "milk foam"],
-        "input": [],
-        "correct": False
-    },
-    {
-        "id": 6, 
-        "name": "Espresso",
-        "image": "static/images/espresso.png",
-        "info": "A concentrated coffee shot brewed by forcing hot water through finely-ground coffee beans, producing an aromatic beverage with a layer of crema on top.",
-        "recipe": ["espresso","espresso","espresso"],
-        "input": [],
-        "correct": False
-    }
-]
+def get_new_quizzes():
+    new_quizzes = []
+    coffee_q_idx = random.sample(range(9), k=6)
+
+    for q_idx, coffee_idx in enumerate(coffee_q_idx):
+        the_question = {}
+        the_question['id'] = q_idx+1
+        the_question['name'] = coffees[coffee_idx]['name']
+        the_question['image'] = coffees[coffee_idx]['image']
+        the_question['info'] = coffees[coffee_idx]['info']
+        the_question['recipe'] = coffees[coffee_idx]['recipe']
+        the_question['input'] = []
+        the_question['correct'] = False
+        new_quizzes.append(the_question)
+
+    return new_quizzes 
+
+quizzes = get_new_quizzes()
 
 current_quiz = 0 
 
@@ -176,7 +139,16 @@ def quiz_main():
     global current_quiz
     return render_template("quiz_main.html", quiz=quizzes[current_quiz], quiz_id=quizzes[current_quiz]['id'] )
 
-    
+@app.route('/quiz_main_try_again')
+def quiz_main_try_again():
+    global current_quiz
+    global quizzes
+    current_quiz=0
+    quizzes = get_new_quizzes()
+
+    return render_template("quiz_main.html", quiz=quizzes[current_quiz], quiz_id=quizzes[current_quiz]['id'] )
+
+
 @app.route('/next_question', methods=['POST'])
 def next_question():
     data = request.get_json() 
@@ -220,7 +192,7 @@ def update_quiz():
             # update correctness
             quiz['correct'] = (quiz['input'] == quiz['recipe'])
             break
-        
+
     print(quizzes)
     return jsonify({"message": "Quiz updated successfully"})
 

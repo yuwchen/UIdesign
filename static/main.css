@@ -266,12 +266,11 @@ body {
 }
 
 #description {
-  padding: 10pt;
   margin-top: 30pt;
 }
 
 .resize_img {
-  width: 30%;
+  width: 40%;
 }
 
 .inline_block {
@@ -287,36 +286,94 @@ body {
 }
 
 #question_id {
-  font-size: 20pt;
+  font-size: 22pt;
+  text-align: center;
+  padding-top:20pt;
+  padding-left:10pt;
 }
 
 #question {
-  padding: 10px;
+  padding-top: 10pt;
+  padding-left:10pt;
+  font-size: 18pt;
 }
 
-#question_id {
-  padding: 10px;
+.question_coffee{
+  font-weight: bold;
+  color:#6f4e37;
 }
+
 
 .page_border {
-  border-right: 1px solid #ccc;
+  border-right: 3px solid #f3f2f2;
 }
 
 .ingredient_block {
   display: inline-block;
   text-align: center;
-  border-right: 1px solid #ccc;
+  border-right: 3px solid #f3f2f2;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: -10px;
+  margin-bottom:-10pt;
+  vertical-align: top;
 }
 
+.info_block{
+  border: 1px solid #f8f8f8;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  background-color: #f8f8f8;
+  
+}
+.coffee_image{
+  text-align: center;
+  padding-right:10pt;
+  padding-left:10pt;
+
+  padding-bottom:5pt;
+}
+.coffee_name{
+  font-size: 20pt;
+  font-weight: bold;
+  margin-top: -10pt;
+}
+
+.coffee_info{
+  margin:20pt;
+  padding-right:5pt;
+  padding-top:30pt;
+
+}
+
+.coffee_info_row{
+padding-left: 10pt;
+padding-right: 5pt;
+padding-top:10pt;
+font-size: 13pt;
+}
+
+
 .ingredient_imag {
-  width: 30%;
+  width: 70%;
+  padding:5pt;
+  padding-bottom:5pt;
+  margin-bottom:5pt;
 }
 
 .ingredient_name {
-  display: inline-block;
-  font-size: 10pt;
+  font-size: 13pt;
+  vertical-align: top;
 }
 
+.add_one{
+  color:#cea97b;
+  font-weight: bold;
+}
 .cup {
   position: relative;
   width: 280px;
@@ -395,6 +452,7 @@ body {
   width: 100%; /* Adjust width as needed */
   overflow-x: auto; /* Enable horizontal scrolling */
   white-space: nowrap; /* Prevent content from wrapping */
+  border-bottom: 3px solid #f3f2f2;
 }
 
 .main_button_container {

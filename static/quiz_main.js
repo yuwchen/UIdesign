@@ -24,28 +24,27 @@ function display_question_on_quiz_page(quiz, quiz_id) {
   $("#description").empty();
 
   var row = $(
-    '<div class="inline_block centering">' +
+    '<div class="info_block">'+
+    '<div class="centering coffee_name">' +
+    quiz["name"] +
+    "</div>" +
+    '<div class="row coffee_info_row"> <div class="coffee_image">'+
       '<img class="resize_img" src="' +
       quiz["image"] +
-      '">' +
-      "</div>" +
-      '<div class="inline_block ">' +
-      quiz["name"] +
-      "</div>" +
-      '<div class="inline_block">' +
+      '">' + '</div class=" centering coffee_info">'+
       quiz["info"] +
-      "</div>" +
-      '<div class="row" id="question_id">' +
+      "</div></div>" +
+      '<div id="question_id">' +
       '<div class="centering">' +
-      "<a>Quiz: " +
+      "<a'>Quiz: " +
       quiz_id +
       "</a>" +
       "</div>" +
       "</div>" +
-      '<div class="row" id="question">' +
-      "Could you make me a cup of " +
+      '<div id="question">' +
+      "Could you make me a cup of <span class='question_coffee'>" + 
       quiz["name"] +
-      "?" +
+      "</span>?" +
       "</div>"
   );
 

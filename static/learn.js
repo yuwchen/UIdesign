@@ -5,17 +5,19 @@ function display_learn_page(coffee) {
   $("#description").empty();
 
   var row = $(
-    '<div class="inline_block centering">' +
+
+    '<div class="info_block">'+
+    '<div class="centering coffee_name">' +
+    coffee["name"] +
+    "</div>" +
+    '<div class="row coffee_info_row"> <div class="coffee_image">'+
       '<img class="resize_img" src="../' +
       coffee["image"] +
-      '">' +
-      "</div>" +
-      '<div class="inline_block centering">' +
-      coffee["name"] +
-      "</div>" +
-      '<div class="inline_block">' +
+      '">' + '</div class=" centering coffee_info">'+
       coffee["info"] +
-      "</div>" +
+      "</div></div>"+
+
+
       '<div class="row " id="learn_answer">' +
       '<img class="resize_img " src="../' +
       coffee["image"] +

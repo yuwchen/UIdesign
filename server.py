@@ -220,6 +220,7 @@ def update_quiz():
             # update correctness
             quiz['correct'] = (quiz['input'] == quiz['recipe'])
             break
+        
     print(quizzes)
     return jsonify({"message": "Quiz updated successfully"})
 

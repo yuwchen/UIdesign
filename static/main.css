@@ -30,6 +30,28 @@ body {
   align-items: center;
 }
 
+button {
+  font-size: 1.2em;
+  padding: 10px 20px;
+  margin: 10px 20px;
+  background-color: #cca677;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  min-width: 100px;
+}
+
+button:hover {
+  color: white;
+  text-decoration: none;
+  background-color: #a79277;
+}
+
 /* homepage styles */
 .home {
   padding: 10%;
@@ -47,32 +69,16 @@ body {
   margin: 30px 10px;
 }
 
-#btn-explore,
-#btn-quiz {
+#btn-explore {
   padding: 20px 50px;
   font-size: 2em;
   font-weight: bold;
-  background-color: #cca677;
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
   margin: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-#btn-explore:hover,
-#btn-quiz:hover {
-  color: white;
-  text-decoration: none;
-  background-color: #a79277;
-}
+} 
 
 /* exploration styles */ 
-.exploration {
+.exploration, 
+.btns {
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
@@ -89,12 +95,7 @@ body {
   font-size: 1.5em;
   margin: 20px;
 }
-
-#btn-quiz {
-  font-size: 1.2em;
-  padding: 10px 20px;
-}
-
+ 
 #btn-quiz img {
   width: 24px;
   height: 24px;
@@ -111,7 +112,8 @@ body {
   padding: 30px;
 }
 
-.card {
+.card,
+.detailcard {
   border: 1px solid #f8f8f8;
   border-radius: 16px;
   padding: 20px;
@@ -230,43 +232,22 @@ body {
 #quiz-summary-button {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  margin-top: 20px;
+  gap: 10px;
+  margin-top: 50px;
 }
 
-.button-quiz {
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 10px;
-  background-color: #f8f8f8;
-  color: #666;
-  text-align: center;
-  border-radius: 10px;
-  transition: background-color 0.3s ease;
+#quiz-summary-button button {
   font-weight: bold;
   font-size: 22px;
-}
-
-.button-quiz:hover {
-  background-color: #f5f3f4;
-  color: #666;
-  text-decoration: none;
+  width: 180px;
 }
 
 .detailcard {
-  border: 1px solid #f8f8f8;
-  border-radius: 16px;
   padding-top: 40px;
   padding-bottom: 0px;
   padding-left: 20px;
   padding-right: 20px;
   margin: 130px 10px;
-  min-width: 300px;
-  max-width: calc(33.33% - 50px);
-  height: 240px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-  background-color: #f8f8f8;
 }
 
 .answer-detail {
@@ -431,41 +412,18 @@ body {
   position: absolute;
   width: 100%;
   height: 50%;
-}
-
-.portion6 {
   background-color: #dcdcdc;
-  top: 4%;
 }
-
-.portion5 {
-  background-color: #dcdcdc;
-  top: 20%;
-}
-
-.portion4 {
-  background-color: #dcdcdc;
-  top: 36%;
-}
-
-.portion3 {
-  background-color: #dcdcdc;
-  top: 52%;
-}
-
-.portion2 {
-  background-color: #dcdcdc;
-  top: 68%;
-}
-
-.portion1 {
-  background-color: #dcdcdc;
-  top: 84%;
-}
+.portion6 { top: 4%; }
+.portion5 { top: 20%; }
+.portion4 { top: 36%; }
+.portion3 { top: 52%;}
+.portion2 { top: 68%; }
+.portion1 { top: 84%; }
 
 .main_row {
   text-align: center;
-  padding-top: 100pt;
+  padding-top: 80pt;
 }
 
 .ingredient_container {
@@ -473,48 +431,6 @@ body {
   overflow-x: auto;
   white-space: nowrap;
   border-bottom: 3px solid #f3f2f2;
-}
-
-.main_button_container {
-  position: relative;
-  height: 150px;
-}
-
-.main_btn {
-  position: absolute;
-  bottom: 0;
-  left: 10;
-  background-color: #6f4e37;
-  color: white;
-  margin-bottom: 50px;
-}
-
-#quiz_reset_button {
-  margin-bottom: 20px;
-}
-
-#quiz_next_button {
-  margin-bottom: -80px;
-}
-
-#quiz_previous_button {
-  margin-bottom: -30px;
-}
-
-#quiz_submit_button {
-  margin-bottom: -80px;
-}
-
-#learn_reset_button {
-  margin-bottom: 20px;
-}
-
-#learn_submit_button {
-  margin-bottom: -80px;
-}
-
-#learn_next_button {
-  margin-bottom: -80px;
 }
 
 #learn_answer img {

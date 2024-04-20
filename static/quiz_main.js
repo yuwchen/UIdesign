@@ -1,26 +1,25 @@
-function display_question_on_quiz_page(quiz, quiz_id) {
-  if (quiz_id == 1) {
-    $("#main_button_container").empty();
-    var row = $(
-      '<button id="quiz_reset_button" class="btn btn-primary main_btn">Empty Cup</button><button id="quiz_next_button" class="btn btn-primary main_btn">Next</button>'
-    );
-    $("#main_button_container").append(row);
-  } else if (quiz_id > 1 && quiz_id < 6) {
-    console.log("load data in view!WQEKWKLFJKLFJWELWEFJ");
-    $("#main_button_container").empty();
-    var row = $(
-      '<button id="quiz_reset_button" class="btn btn-primary main_btn">Empty Cup</button> <button id="quiz_previous_button" class="btn btn-primary main_btn">Previous</button> <button id="quiz_next_button" class="btn btn-primary main_btn">Next</button>'
-    );
-    $("#main_button_container").append(row);
-  } else if (quiz_id == 6) {
-    $("#main_button_container").empty();
-    var row = $(
-      '<button id="quiz_reset_button" class="btn btn-primary main_btn">Empty Cup</button> <button id="quiz_previous_button" class="btn btn-primary main_btn">Previous</button> <button id="quiz_submit_button" class="btn btn-primary main_btn">Submit</a>'
-    );
-    $("#main_button_container").append(row);
-  }
+function display_question_on_quiz_page(quiz) {
+  $("#main_button_container").empty();
 
-  console.log("load data in view!", quiz, "quiz_id:", quiz_id);
+  row = ""
+  var reset = '<button id="quiz_reset_button">Empty Cup</button>'
+  var prev = '<button id="quiz_previous_button">Previous</button>'
+  var next = '<button id="quiz_next_button">Next</button>'
+  var submit = '<button id="quiz_submit_button">Submit</button>'
+
+  if (quiz['id'] == 1) {
+    row = reset + next;
+  } else if (quiz['id'] > 1 && quiz['id'] < 6) {
+    row = reset + prev + next;
+  } else if (quiz['id'] == 6) { 
+    row = reset + prev + submit;
+  } else {
+    console.log("quiz id cannot be more than 6!")
+  }
+  
+  $("#main_button_container").append(row);
+
+  console.log("load data in view!", quiz, "quiz_id:", quiz['id']);
   $("#description").empty();
 
   var row = $(
@@ -37,7 +36,7 @@ function display_question_on_quiz_page(quiz, quiz_id) {
       '<div id="question_id">' +
       '<div class="centering">' +
       "<a'>Quiz: " +
-      quiz_id +
+      quiz['id'] +
       "</a>" +
       "</div>" +
       "</div>" +
@@ -61,7 +60,7 @@ function display_question_on_quiz_page(quiz, quiz_id) {
       url: "/next_question",
       type: "POST",
       contentType: "application/json",
-      data: JSON.stringify({ quiz_id: quiz_id, input: ingredient_selection }),
+      data: JSON.stringify({ quiz_id: quiz['id'], input: ingredient_selection }),
       success: function (newQuiz) {
         ingredient_selection = newQuiz["input"];
         updateCup(ingredient_selection);
@@ -79,8 +78,9 @@ function display_question_on_quiz_page(quiz, quiz_id) {
       url: "/previous_question",
       type: "POST",
       contentType: "application/json",
-      data: JSON.stringify({ quiz_id: quiz_id, input: ingredient_selection }),
+      data: JSON.stringify({ quiz_id: quiz['id'], input: ingredient_selection }),
       success: function (newQuiz) {
+        console.log("Hello", newQuiz)
         ingredient_selection = newQuiz["input"];
         updateCup(ingredient_selection);
         console.log("current key in view return", newQuiz["id"]);
@@ -97,7 +97,7 @@ function display_question_on_quiz_page(quiz, quiz_id) {
       url: "/update_quiz",
       type: "POST",
       contentType: "application/json",
-      data: JSON.stringify({ quiz_id: quiz_id, input: ingredient_selection }),
+      data: JSON.stringify({ quiz_id: quiz['id'], input: ingredient_selection }),
       success: function () {
         window.location.href = "/quiz_summary";
       },
@@ -122,5 +122,5 @@ function selectIngredient(ingredient_name) {
 }
 
 $(document).ready(function () {
-  display_question_on_quiz_page(quiz, quiz_id);
+  display_question_on_quiz_page(quiz);
 });

@@ -5,7 +5,6 @@ function display_learn_page(coffee) {
   $("#description").empty();
 
   var row = $(
-
     '<div class="info_block">'+
     '<div class="centering coffee_name">' +
     coffee["name"] +
@@ -16,8 +15,6 @@ function display_learn_page(coffee) {
       '">' + '</div class=" centering coffee_info">'+
       coffee["info"] +
       "</div></div>"+
-
-
       '<div class="row " id="learn_answer">' +
       '<img class="resize_img " src="../' +
       coffee["image"] +
@@ -26,6 +23,10 @@ function display_learn_page(coffee) {
   );
 
   $("#description").append(row);
+
+  $("#learn_reset_button").show();
+  $("#learn_submit_button").show();
+  $("#learn_next_button").hide();
 
   $("#learn_reset_button").click(function () {
     ingredient_selection = [];
@@ -43,37 +44,31 @@ function display_learn_page(coffee) {
         console.log("current key in view return", result["finished"]);
 
         if (result["finished"] === true) {
-          console.log("result['finished'] is true");
-          $("#learn_button_container").empty();
+          $("#learn_reset_button").hide();
+          $("#learn_submit_button").hide();
+          $("#learn_next_button").show();
 
-          var row = $(
-            '<div id="learn_response_container">' +
-              '<img id="learn_correct_image" src="../static/images/checked.png">' +
-              "</div>" +
-              '<button id="learn_next_button" class="btn btn-primary main_btn">Next</button>'
-          );
-          $("#learn_button_container").append(row);
-
-          $("#learn_next_button").click(function () {
-            console.log("Next button click!");
-            window.location.href = "../exploration";
+          var correctImage = $("<img>", {
+            id: "learn_correct_image",
+            src: "../static/images/checked.png",
           });
+          $("#learn_response_container").empty();
+          $("#learn_response_container").append(correctImage);
+          
         } else {
-          console.log("result['finished'] is false");
           ingredient_selection = [];
           updateCup(ingredient_selection);
-          $("#learn_response_container").empty();
 
           var errorImage = $("<img>", {
             id: "learn_incorrect_image",
             src: "../static/images/unchecked.png",
           });
-
           var tryAgainText = $("<p>", {
             text: "Try Again",
             class: "try-again-text",
           });
 
+          $("#learn_response_container").empty();
           $("#learn_response_container").append(errorImage, tryAgainText);
 
           setTimeout(function () {

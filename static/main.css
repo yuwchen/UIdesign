@@ -1,8 +1,8 @@
-body {
-  margin: 0 150px;
+.light-coffee {
+  color: #d0bb94;
 }
 
-.light-coffee {
+.med-coffee {
   color: #cca677;
 }
 
@@ -13,14 +13,12 @@ body {
 /* navbar styles */
 .navbar {
   backdrop-filter: blur(5px);
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: #d0bb94;
+  padding: 20px 60px;
 }
 
 .navbar-line {
-  border-bottom: 1px solid #d3d3d3;
-  margin: 0px 60px;
-  padding-top: 20px;
-  padding-bottom: 10px;
+  border-bottom: 2px solid #cca677;
 }
 
 .navbar-brand {
@@ -54,7 +52,7 @@ button:hover {
 
 /* homepage styles */
 .home {
-  padding: 10%;
+  padding: 5%;
   text-align: center;
 }
 
@@ -104,7 +102,7 @@ button:hover {
 }
 
 #all-coffees {
-  margin: 0 20px;
+  margin: 0 60px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

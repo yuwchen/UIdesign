@@ -22,30 +22,24 @@ function display_question_on_quiz_page(quiz) {
   console.log("load data in view!", quiz, "quiz_id:", quiz['id']);
   $("#description").empty();
 
-  var row = $(
-    '<div class="info_block">'+
-    '<div class="centering coffee_name">' +
-    quiz["name"] +
-    "</div>" +
-    '<div class="row coffee_info_row"> <div class="coffee_image">'+
-      '<img class="resize_img" src="' +
-      quiz["image"] +
-      '">' + '</div class=" centering coffee_info">'+
-      quiz["info"] +
-      "</div></div>" +
-      '<div id="question_id">' +
-      '<div class="centering">' +
-      "<a'>Quiz: " +
-      quiz['id'] +
-      "</a>" +
-      "</div>" +
-      "</div>" +
-      '<div id="question">' +
-      "Could you make me a cup of <span class='question_coffee'>" + 
-      quiz["name"] +
-      "</span>?" +
-      "</div>"
-  );
+  var row = ` <div class="info-block">
+                <div class='card row' id="info" data-id=${quiz["id"]}>
+                    <div class="col-7">
+                        <h2>${quiz["name"]}</h2>
+                        <p>${quiz["info"]}</p>
+                    </div>
+                    <div class="col-5">
+                        <img src='../static/images/blank.png' alt='blank'>
+                        <img src='../${quiz["image"]}' alt='${quiz["name"]}'>
+                    </div>
+                </div>
+                <div id="question_id">
+                    <a'>Quiz: ${quiz["id"]}/6 </a>
+                </div>
+                <div id="question">
+                  Could you make me a cup of <span class='question_coffee'>${quiz["name"]}</span>?
+                </div>
+              <div> `;
 
   $("#description").append(row);
 

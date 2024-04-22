@@ -4,23 +4,18 @@ function display_learn_page(coffee) {
   console.log("load data in view!", coffee);
   $("#description").empty();
 
-  var row = $(
-    '<div class="info_block">'+
-    '<div class="centering coffee_name">' +
-    coffee["name"] +
-    "</div>" +
-    '<div class="row coffee_info_row"> <div class="coffee_image">'+
-      '<img class="resize_img" src="../' +
-      coffee["image"] +
-      '">' + '</div class=" centering coffee_info">'+
-      coffee["info"] +
-      "</div></div>"+
-      '<div class="row " id="learn_answer">' +
-      '<img class="resize_img " src="../' +
-      coffee["image"] +
-      '">' +
-      "</div>"
-  );
+  var row = ` <div class="info-block">
+                <div class='card row' id="info" data-id=${coffee["id"]}>
+                    <div class="col-7">
+                        <h2>${coffee["name"]}</h2>
+                        <p>${coffee["info"]}</p>
+                    </div>
+                    <div class="col-5">
+                        <img src='../static/images/${coffee["learned"] ? "checked" : "blank"}.png' alt='learned'>
+                        <img src='../${coffee["image"]}' alt='${coffee["name"]}'>
+                    </div>
+                </div>
+              <div> `;
 
   $("#description").append(row);
 

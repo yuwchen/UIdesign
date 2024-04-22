@@ -1,3 +1,7 @@
+body {
+  font-family: "Verdana", Geneva, sans-serif; /* Sans-serif font stack */
+}
+
 .light-coffee {
   color: #d0bb94;
 }
@@ -124,7 +128,7 @@ button:hover {
   background-color: #f8f8f8;
 }
 
-.card:hover {
+.card:not(#info):hover {
   transform: translateY(-5px);
   cursor: pointer;
   background-color: #f5f3f4;
@@ -288,7 +292,6 @@ button:hover {
 
 #question_id {
   font-size: 22pt;
-  text-align: center;
   padding-top:20pt;
   padding-left:10pt;
 }
@@ -320,40 +323,31 @@ button:hover {
   vertical-align: top;
 }
 
-.info_block {
-  border: 1px solid #f8f8f8;
-  border-radius: 16px;
-  padding: 20px;
-  margin: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-  background-color: #f8f8f8;
+#info {
+  margin-top: -25px;
+  margin-left: -10px;
+  min-width: 280px;
+  height: 220px;
+  padding: 12px;
 }
-
-.coffee_image {
-  text-align: center;
-  padding-right:10pt;
-  padding-left:10pt;
-  padding-bottom:5pt;
+#info h2 {
+  padding: 2px;
+  font-size: 17px;
 }
-
-.coffee_name {
-  font-size: 20pt;
-  font-weight: bold;
-  margin-top: -10pt;
+#info p {
+  font-size: 12px;
 }
-
-.coffee_info {
-  margin:20pt;
-  padding-right:5pt;
-  padding-top:30pt;
+#info img:first-child {
+  margin-left: 24px;
+  margin-top: -5px;
+  height: 40px;
+  width: auto;
 }
-
-.coffee_info_row {
-  padding-left: 10pt;
-  padding-right: 5pt;
-  padding-top:10pt;
-  font-size: 13pt;
+#info img:last-child {
+  margin-top: 40px;
+  padding: 5px;
+  height: 80px;
+  width: auto;
 }
 
 .ingredient_imag {
@@ -379,20 +373,21 @@ button:hover {
   height: 300px;
   border-bottom-left-radius: 45%;
   border-bottom-right-radius: 45%;
-  background: #dcdcdc;
+  background: #f3f2f2;
 }
 
 .handle {
   position: absolute;
-  right: -80px;
+  right: -75px;
   top: 40px;
   width: 160px;
   height: 180px;
-  border: 25px solid #dcdcdc;
+  border: 25px solid #f3f2f2;
   border-left: 25px solid transparent;
   border-bottom: 25px solid transparent;
   border-radius: 50%;
   transform: rotate(42deg);
+  z-index: -1;
 }
 
 .recipe {
@@ -409,8 +404,11 @@ button:hover {
 .portion {
   position: absolute;
   width: 100%;
-  height: 50%;
-  background-color: #dcdcdc;
+  height: 18%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f2f2;
 }
 .portion6 { top: 4%; }
 .portion5 { top: 20%; }

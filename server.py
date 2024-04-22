@@ -217,9 +217,10 @@ def submit_learn():
     finished = True
     if len(correct_recipe) != len(input):
         finished = False
-    for i in range(len(input)):
-        if input[i] != correct_recipe[i]:
-            finished = False
+    else: 
+        for i in range(len(input)):
+            if input[i] != correct_recipe[i]:
+                finished = False
 
     if finished is True:
         print(finished)

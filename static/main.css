@@ -56,8 +56,17 @@ button:hover {
 
 /* homepage styles */
 .home {
-  padding: 5%;
+  padding: 3%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home p {
+  width: 60%;
+  font-style: italic;
 }
 
 .home-title {
@@ -68,12 +77,12 @@ button:hover {
 .home-image {
   width: 80%;
   height: auto;
-  margin: 30px 10px;
+  margin: 20px 10px;
 }
 
 #btn-explore {
-  padding: 20px 50px;
-  font-size: 2em;
+  padding: 20px 30px;
+  font-size: 1.8em;
   font-weight: bold;
   margin: 10px 20px;
 } 

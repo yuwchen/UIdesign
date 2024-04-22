@@ -5,7 +5,8 @@ const ingred2color = {
     'water': '#DEF4FC',
     'whiskey': '#FFCB85',
     'hot chocolate': '#7B3F00',
-    'ice cream': '#FDF5C9'
+    'ice cream': '#FDF5C9',
+    'whipped cream': '#FCFBF4'
 };
 
 function isColorDark(color) {
@@ -17,13 +18,14 @@ function isColorDark(color) {
     return luminance < 0.5;
 }
 
-function updateCup(ingreds) {
+function updateCup(ingreds, div) {
     var count = 0;
 
     for (let i = 1; i <= 6; i++) { 
         count += 1;
 
-        let curr = $('.portion' + i);
+        let curr = $(div).find ('.portion' + i)
+        console.log(curr)
         if (i <= ingreds.length) {
             curr.css("background-color", ingred2color[ingreds[i - 1]]);
             curr.css("color", isColorDark(ingred2color[ingreds[i - 1]]) ? "white" : "black");

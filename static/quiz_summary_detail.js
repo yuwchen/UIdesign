@@ -54,7 +54,7 @@ function display_quiz_detail() {
             <div class="portion portion5"></div>
             <div class="portion portion4"></div>
             <div class="portion portion3"></div>
-            <div the="portion portion2"></div>
+            <div class="portion portion2"></div>
             <div class="portion portion1"></div>
           </div>
           <div class="handle"></div>
@@ -65,19 +65,6 @@ function display_quiz_detail() {
 
   updateCup(quiz["input"], $("#user_cup"));
   updateCup(quiz["recipe"], $("#correct_cup"));
-}
-
-// something wrong in this function: it does not display Americano's correct answer correctly
-function updateCup(ingreds, cupElement) {
-  console.log(ingreds);
-  for (let i = 1; i <= 6; i++) {
-    let curr = cupElement.find(".portion" + i.toString());
-    let color =
-      i <= ingreds.length
-        ? ingred2color[ingreds[i - 1]]
-        : cupElement.css("background-color");
-    curr.css("background-color", color);
-  }
 }
 
 $(function () {

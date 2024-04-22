@@ -15,9 +15,24 @@ function display_learn_page(coffee) {
                         <img src='../${coffee["image"]}' alt='${coffee["name"]}'>
                     </div>
                 </div>
+
+                <div class="cup" id="correct_cup" style="margin-top:50px;margin-left:-20px;">
+                <div class="recipe">
+                  <div class="portion portion6"></div>
+                  <div class="portion portion5"></div>
+                  <div class="portion portion4"></div>
+                  <div class="portion portion3"></div>
+                  <div class="portion portion2"></div>
+                  <div class="portion portion1"></div>
+                </div>
+                <div class="handle"></div>
+              </div>
+                
               <div> `;
 
   $("#description").append(row);
+  updateCup(coffee["recipe"], "#correct_cup")
+  $('#correct_cup').css('transform','scale(.8)');
 
   $("#learn_reset_button").show();
   $("#learn_submit_button").show();
@@ -25,7 +40,7 @@ function display_learn_page(coffee) {
 
   $("#learn_reset_button").click(function () {
     ingredient_selection = [];
-    updateCup(ingredient_selection);
+    updateCup(ingredient_selection, "#user_cup");
     console.log("Ingredient selection has been reset.");
   });
 
@@ -52,7 +67,7 @@ function display_learn_page(coffee) {
           
         } else {
           ingredient_selection = [];
-          updateCup(ingredient_selection);
+          updateCup(ingredient_selection, "#user_cup");
 
           var errorImage = $("<img>", {
             id: "learn_incorrect_image",
@@ -87,7 +102,7 @@ function selectIngredient(ingredient_name) {
     console.log("You cannot add more than 6 ingredients.");
   }
 
-  updateCup(ingredient_selection);
+  updateCup(ingredient_selection, "#user_cup");
 }
 
 $(document).ready(function () {

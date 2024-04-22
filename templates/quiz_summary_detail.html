@@ -8,8 +8,11 @@
   let quiz = {{quiz|tojson}}
 </script>
 
-<div id="quiz_details" class="row"></div>
-<div id="quiz-summary-button" class="row">
-  <a href="/quiz_summary" class="button-quiz">Go Back</a>
+<div style="padding: 20px 100px;">
+  <div id="quiz_details" class="row"></div>
+  <div id="quiz-summary-button" class="row">
+    <button class="button-quiz"onclick="window.location.href='/quiz_summary'">Go Back</button>
+  </div>
 </div>
+
 {% endblock %}

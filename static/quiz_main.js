@@ -45,7 +45,7 @@ function display_question_on_quiz_page(quiz) {
 
   $("#quiz_reset_button").click(function () {
     ingredient_selection = [];
-    updateCup(ingredient_selection);
+    updateCup(ingredient_selection, "#user_cup");
     console.log("Ingredient selection has been reset.");
   });
 
@@ -57,7 +57,7 @@ function display_question_on_quiz_page(quiz) {
       data: JSON.stringify({ quiz_id: quiz['id'], input: ingredient_selection }),
       success: function (newQuiz) {
         ingredient_selection = newQuiz["input"];
-        updateCup(ingredient_selection);
+        updateCup(ingredient_selection, "#user_cup");
         console.log("current key in view return", newQuiz["id"]);
         display_question_on_quiz_page(newQuiz, newQuiz["id"]);
       },
@@ -76,7 +76,7 @@ function display_question_on_quiz_page(quiz) {
       success: function (newQuiz) {
         console.log("Hello", newQuiz)
         ingredient_selection = newQuiz["input"];
-        updateCup(ingredient_selection);
+        updateCup(ingredient_selection, "#user_cup");
         console.log("current key in view return", newQuiz["id"]);
         display_question_on_quiz_page(newQuiz, newQuiz["id"]);
       },
@@ -112,7 +112,7 @@ function selectIngredient(ingredient_name) {
     console.log("You cannot add more than 6 ingredients.");
   }
 
-  updateCup(ingredient_selection);
+  updateCup(ingredient_selection, "#user_cup");
 }
 
 $(document).ready(function () {

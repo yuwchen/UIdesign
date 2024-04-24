@@ -9,7 +9,7 @@ coffees = [
         "id": 1,
         "name": "Latte",
         "image": "static/images/latte.png",
-        "learned": True,
+        "learned": False,
         "info": "Espresso blended with silky steamed milk for a creamy texture and balanced flavor profile.",
         "recipe": ["espresso", "espresso", "milk","milk","milk","milk foam"]
     },
@@ -17,7 +17,7 @@ coffees = [
         "id": 2,
         "name": "Flat White",
         "image": "static/images/flat_white.png",
-        "learned": True,
+        "learned": False,
         "info": "A bold espresso shot with a smooth layer of microfoam, creating a velvety texture and strong coffee taste.",
         "recipe": ["espresso", "milk","milk"],
     },
@@ -25,7 +25,7 @@ coffees = [
         "id": 3, 
         "name": "Americano",
         "image": "static/images/americano.png",
-        "learned": True,
+        "learned": False,
         "info": "Hot water added to espresso for a lighter coffee experience, maintaining the espresso's robust flavor.",
         "recipe": ["espresso",  "water"]
     },
@@ -33,7 +33,7 @@ coffees = [
         "id": 4, 
         "name": "Mocha",
         "image": "static/images/mocha.png",
-        "learned": True,
+        "learned": False,
         "info": "Rich espresso infused with decadent chocolate syrup and creamy steamed milk, offering a delightful blend of bitter and sweet notes.",
         "recipe": ["espresso", "hot chocolate", "milk", "milk", "whipped cream"]
     },
@@ -41,7 +41,7 @@ coffees = [
         "id": 5, 
         "name": "Cappuccino",
         "image": "static/images/cappuccino.png",
-        "learned": True,
+        "learned": False,
         "info": "A harmonious combination of espresso, steamed milk, and frothed milk, resulting in a creamy texture and bold coffee flavor.",
         "recipe": ["espresso", "milk", "milk foam"]
     },
@@ -57,7 +57,7 @@ coffees = [
         "id": 7, 
         "name": "Irish Coffee",
         "image": "static/images/irish_coffee.png",
-        "learned": True,
+        "learned": False,
         "info": "Whiskey-spiked coffee topped with cream; a cozy, spirited treat with a caffeine kick.",
         "recipe": ["espresso","espresso","whiskey", "whipped cream"]
     },
@@ -65,7 +65,7 @@ coffees = [
         "id": 8, 
         "name": "Macchiato",
         "image": "static/images/macchiato.png",
-        "learned": True,
+        "learned": False,
         "info": "Espresso \"stained\" with a dollop of frothy milk; a bold, balanced coffee indulgence.",
         "recipe": ["espresso", "milk foam", "milk foam"]
     },
@@ -73,7 +73,7 @@ coffees = [
         "id": 9, 
         "name": "Affogato",
         "image": "static/images/affogato.png",
-        "learned": True,
+        "learned": False,
         "info": "Hot espresso poured over cold gelato; a delightful contrast of temperatures and flavors.",
         "recipe": ["espresso","espresso", "ice cream","ice cream","ice cream"]
     }

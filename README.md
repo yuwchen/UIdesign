@@ -2,7 +2,7 @@
 
 * A website that teaches you to recognize varieties of coffee drinks
 
-----
+
 
 <p align="center">
 <img src="https://github.com/yuwchen/UIdesign/blob/main/screenshot/homepage.png" alt="main"  width=40% height=40% />
